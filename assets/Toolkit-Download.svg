@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <rect fill="#fff" fill-opacity="0" height="100" width="100" y="0" x="0"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="#fff" fill-opacity="0" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <path stroke="#4c4c4c" id="svg_1" d="m0.852488,49.991909l48.999998,50.378803l49.000008,-50.378803l-24.499817,0l0,-50.621204l-49.000185,0l0,50.621204l-24.500004,0z" stroke-width="1.5" fill="#4c4c4c"/>
+  <rect id="svg_2" height="15" width="100" y="86.5" x="0" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#4c4c4c" fill="#4c4c4c"/>
+ </g>
+</svg>
