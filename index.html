@@ -3,36 +3,137 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu" />
-<title>Steve's Toolkit - Simple, Free, Open-Source Web Tools</title>
+<title>Steve's Toolkit - Simple, Free, Open-Source Tools</title>
 <style>
-    a {text-decoration:none;color:#0000d8}
-    body,input,button {font-family:Ubuntu, Arial, sans-serif}
-    body,input,button {font-size:14px}
-    h1 {font-size:2rem}
-    body {margin:0;padding:0;width:100%}
-    div.Navigation {text-align:center;position:fixed;top:0;width:100%;margin:0;padding:0;background-color:rgba(30, 30, 30, 0.85)}
-    div.Navigation table {width:100%;background-color:rgba(20, 20, 20, 0.8)}
-    div.Navigation td {text-align:left;padding:10px;vertical-align:middle}
-    div.Navigation tr td:nth-child(1) {height:25px;font-size:1.2rem;font-weight:bold}
-    div.Navigation a {color:#FFF;transition:color 0.5s;margin-right:15px}
-    div.Navigation input {border:none;height:40px;vertical-align:middle;padding:0px 10px;margin:20px 20px;width:390px}
-    div.ElementsContainer {column-width:500px;column-rule:0px;column-gap:0px}
-    div.Element {background-color:#EEE;padding:20px;border:10px #FFF solid;transition:background-color 0.5s}
-    div,h1,h2,h3,h4,h5,h6,em,p {-webkit-column-break-inside:avoid;page-break-inside:avoid;break-inside:avoid}
-    @media only screen and (max-width:500px) {
-        div.Navigation input {width:390px}
-        div.Navigation td {display:block;text-align:left}
-        div.Page, divHiddenPage {margin-top:170px}
+    html {
+        height:100%;
+        background-image:linear-gradient(175deg, #00b1ff 200px, white 200px, white)
     }
-    @media only screen and (min-width:501px) {
-        div.Navigation tr td:nth-child(2) {text-align:right;height:20px}
-        div.Page, divHiddenPage {margin-top:140px}
+    body {
+        font-family: Ubuntu, Arial, sans-serif;
+        text-align: justify;
+        text-justify: inter-word;
+        height: 100%;
+        width: 100%;
+        max-width: 800px;
+        margin: auto;
+        border:20px transparent solid;
+        box-sizing: border-box;
     }
-    @media (hover:hover) {
-        div.Element:hover {background-color:#DDD}
-        table.HomeToolkit a:hover {opacity:1}
-        div.Navigation a:hover {color:#888}
-        table.ElementHeader tr td:nth-child(2) a:hover {color:#222}
+    p {
+        line-height: 1.5;
+    }
+    a {
+        text-decoration: none;
+        color: #0000d8;
+    }
+    h1 {
+        font-size:1.5em;
+    }
+    div#WhitePage {
+        padding: 20px;
+        background-color: white;
+        min-height: 300px;
+        box-shadow:0px 0px 10px #888;
+    }
+    div#TitleBox {
+        border: 1px #444 solid;
+        padding: 20px;
+        height: 150px;
+        font-size: 3em;
+        display: block;
+        position: relative;
+    }
+    div,h1,h2,h3,h4,h5,h6,em,p {
+        -webkit-column-break-inside: avoid;
+        page-break-inside: avoid;
+        break-inside: avoid
+    }
+    div#ElementsContainer {
+        column-width:200px;
+        column-rule:0px;
+        column-gap:20px;
+        margin-top:20px;
+    }
+    div.Element {
+        color:#555;
+        padding:20px;
+        border:1px #888 solid;
+        transition:background-color 0.5s;
+        box-sizing: border-box;
+    }
+    div.Element div.ElementImage {
+        opacity:0.5;
+        height:75px;background-image:url('assets/WoL.gif');background-size: cover;opacity:0.5
+    }
+    div.Element:hover div.ElementImage {
+        opacity:1;
+    }
+    div.Element h4 {
+        text-align: center;
+        font-size: 1.3em;
+        margin:10px 0px 20px 0px;
+    }
+    div#Disclaimer {
+        background-color: #DDD;
+        padding:20px;
+        margin-top:20px;
+    }
+    div#Disclaimer table tr td {
+        vertical-align: top;
+        
+    }
+    table.Tool {
+        margin-top: 20px;
+        width: 100%;
+        border: 1px #DDD solid;
+    }
+    table.Tool td:nth-child(2) {
+        background-color: #DDD;
+        width:150px;
+    }
+    
+    table.Tool td {
+        padding:20px
+    }
+    a.ToolButton {
+        display: block;
+        background-color: #00b1ff;
+        color: white;
+        text-align:center;
+        padding:10px 0px;
+        border: 1px #0195d6 solid;
+        border-radius:5px; 
+    }
+    a.ToolButton:hover {
+        background-color: #0195d6;
+    }
+    p.LicenceNotice {
+        font-size: 0.7em;
+        text-align: center;
+        color:#444;
+        line-height: 1;
+    }
+    a.Underline {
+        text-decoration: underline;
+        color: inherit;
+    }
+    table.Footer {
+        margin-top: 20px;
+        color: #888;
+        font-size: 0.8em;
+        width: 100%;
+    }
+    table.Footer td:nth-child(2) {
+        text-align: right;
+    }
+    table.Footer td:nth-child(2) a {
+        margin-left: 15px;
+        color: inherit;
+    }
+    table.Footer td:nth-child(2) a:hover {
+        color:#444;
+        text-decoration: underline;
     }
     @keyframes ShowPage {
         0% {display:none;opacity:0}
@@ -40,156 +141,52 @@
         50% {display:inline;opacity:0}
         100% {display:inline;opacity:1}
     }
-    div.Page, divHiddenPage {margin-bottom:20px;line-height:1.5;text-align:justify;text-justify:inter-word}
     div.Page {animation-name:ShowPage;animation-duration:0.5s}
     div.HiddenPage {display:none}
-    .ElementContent {padding:20px}
-    table.HomeToolkit {width:100%;border-spacing:10px}
-    table.HomeToolkit img {width:25px;height:25px}
-    div.Page em {font-size:0.8rem;color:#888;font-style:normal}
-    div.DocumentContainer {padding:0px 20px}
-    table.HomeToolkit a {margin-left:10px;opacity:0.5;transition:opacity 0.5s}
-    table.ElementHeader {padding:0;margin:0;border:0;border-spacing:0;width:100%}
-    table.ElementHeader tr td:nth-child(2) {text-align:right}
-    table.ElementHeader tr td:nth-child(2) a {color:#666;transition:color 0.5s}
-    h1 {margin:20px 0px;font-size:2rem;font-weight:bold}
-    h2 {margin:20px 0px;font-size:1.8rem;font-weight:bold;color:#3737f2}
-    h3 {margin:20px 0px;font-size:1.8rem;font-weight:normal}
-    h4 {margin:0;font-size:1rem;font-weight:bold}
-    h5 {margin:0;font-size:1.1rem;font-weight:bold}
-    h6 {margin:20px 0px;font-size:1.05rem;font-weight:normal}
-    em {color:#444;font-size:1rem}
-    div.DocColumns {column-width:600px;column-gap:50px}
-    table#SearchResults, table#SearchResults td {margin:0}
-    table#SearchResults h2 {margin:0}
 </style>
 <script type="text/javascript">
     var CurrentPageID = 'Home';
-    var LastPageID = 'Home';
     function ShowPage(PageID) {
         if(PageID != CurrentPageID) {
             document.getElementById(CurrentPageID+"Page").setAttribute("class","HiddenPage");
             document.getElementById(PageID+"Page").setAttribute("class","Page");
-            LastPageID = CurrentPageID;
             CurrentPageID = PageID;
             document.documentElement.scrollTop = 0;
             document.body.scrollTop = 0;
         }
     }
-    function SubmitSearch() {
-        var SearchKeyword = document.getElementById("SearchKeyword").value;
-        if(SearchKeyword != "") {
-            ShowPage("Search");
-        } else {
-            if(CurrentPageID == "Search") { ShowPage(LastPageID); } else { ShowPage(CurrentPageID); }
-        }
-    }
 </script>
 </head>
 <body>
-<div class="Navigation">
-    <table>
-        <tr>
-            <td><a href="javascript:ShowPage('Home')">STEVE's TOOLKIT</a></td>
-            <td><a href="javascript:ShowPage('Home')">Home</a> <a href="javascript:ShowPage('Toolkit')">Toolkit</a> <a href="javascript:ShowPage('Help')">Help</a> <a href="javascript:ShowPage('Blog')">Blog</a> <a href="https://github.com/leestevetk" target="_blank">GitHub</a></td>
-        </tr>
-    </table>
-    <input type="text" placeholder="Search for anything..." id="SearchKeyword" oninput="javascript:SubmitSearch()" onfocus="javascript:SubmitSearch()" />
-</div>
-<div class="HiddenPage" id="SearchPage">
-    <div class="DocumentContainer">
-        <h6><a href="javascript:ShowPage(LastPageID)">Return to previous page</a></h6>
-        <h1>SEARCH RESULTS</h1>
-        <table id="SearchResults">
-            <tr><td><h2>Toolkit (0)</h2></td><td></td></tr>
-            <tr><td><h2>Help (0)</h2></td><td></td></tr>
-            <tr><td><h2>Blog (0)</h2></td><td></td></tr>
+<div id="WhitePage">
+    <div id="HomePage" class="Page">
+        <div id="ShortLegal">Tools on this website are provided to you under their respective licences without any warranty, see our <a href="javascript:ShowPage('Legal')">Legal Notice.</a>
+        </div>
+        <table class="Tool" id="AllTimes">
+            <tr>
+                <td><b>@AllTimes</b><br />Multi-threaded timer and stopwatch</td>
+                <td><a href="./AllTimes/releases/AtAllTimes-0.4.0.html" class="ToolButton">Launch</a><p class="LicenceNotice">By proceeding you accept the <a href="https://github.com/leestevetk/AllTimes/blob/master/LICENSE" class="Underline">applicable license</a>.</p></td>
+            </tr>
+        </table>
+        <table class="Tool" id="WoL">
+            <tr>
+                <td><b>WoL.sh</b><br />Simple Wake-On-LAN shell script for Mac/Linux.</td>
+                <td><a href="https://github.com/leestevetk/WoL.sh/releases/download/v0.1/WoL.sh" class="ToolButton">Download</a><p class="LicenceNotice">By proceeding you accept the <a href="https://github.com/leestevetk/WoL.sh/blob/master/LICENSE" class="Underline">applicable license</a>.</p></td>
+            </tr>
         </table>
     </div>
-</div>
-<div class="HiddenPage" id="ToolkitPage">
-    <div class="DocumentContainer">
-        <h1>TOOLKIT</h1>
+    <div id="LegalPage" class="HiddenPage">
+        <a href="javascript:ShowPage('Home')">Return to homepage</a>
+        <h1>LEGAL NOTICE</h1>
+        <p>I, OWNER OF THIS WEBSITE, HEREBY DISCLAIM ANY LIABILITY FOR DAMAGES OR WARRANTY arising in or out of the course of your usage of this website and any content thereof, under any laws of any jurisdiction, to the extent that is legally permissible.</p>
+        <p>Your use of this website and any content thereof is governed by the laws of the Hong Kong Special Administrative Region of the People's Republic of China ("Hong Kong"). You irrevocably agree that the courts of Hong Kong shall enjoy exclusive jurisdiction over, and that the courts of Hong Kong is the most appropriate and convenient forum for resolving, any disputes or claims arising in or out of the course of your usage of this website and any content thereof.</p>
     </div>
 </div>
-<div class="HiddenPage" id="HelpPage">
-    <div class="DocumentContainer">
-        <h1>HELP</h1>
-    </div>
-</div>
-<div class="HiddenPage" id="BlogPage">
-    <div class="DocumentContainer">
-        <h1>BLOG</h1>
-    </div>
-</div>
-<div class="HiddenPage" id="LegalPage">
-    <div class="DocumentContainer">
-        <h6><a href="javascript:ShowPage('Home')">Return to home</a></h6>
-        <h1>LEGAL</h1>
-        <div class="DocColumns">
-            <h6>Tools on this website are provided to you under the <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank">GNU General Public License (version 3)</a> (the <b>"GPL"</b>), whereas all other content on this website is provided to you under the <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a> (the "<b>CC License</b>"). By using this website, you consent to be bound by the terms of these licence(s) (collectively the <b>"Relevant Licences"</b>, each a <b>"Relevant Licence"</b>) as applied to relevant content of this website.</h6>
-            <em><br /><b>"Tools"</b> means any file, information or content listed under the "Toolkit" section(s) on this website or contained under the URL folder "./toolkit". This includes but is not limited to all versions of <i>&#64;AllTimes</i>.<br /><br />
-            In the event that a tool/content specifies an applicable licence other than a Relevant Licence, that specified licence shall apply to that particular tool/content, and the Relevant Licences shall have no effect over that particular tool/content.<br /><br /></em>
-            <h6><b>I, OWNER OF THIS WEBSITE, HEREBY DISCLAIM ANY LIABILITY FOR DAMAGES OR WARRANTY</b> arising in or out of the course of your usage of this website and any content thereof, under any laws of any jurisdiction, to the extent that is legally permissible.</h6>
-            <h6>Your use of this website and any content thereof is governed by the laws of the Hong Kong Special Administrative Region of the People's Republic of China ("<b>Hong Kong</b>"). You irrevocably agree that the courts of Hong Kong shall enjoy exclusive jurisdiction over, and that the courts of Hong Kong is the most appropriate and convenient forum for resolving, any disputes or claims arising in or out of the course of your usage of this website and any content thereof.</h6>
-            <h6>Below is a summary of the Relevant Licences. For the avoidance of doubt, this summary forms no part of any Relevant Licence. If you are unfamiliar with the Relevant Licences, you are <b>STRONGLY ADVISED</b> to read each of them in detail. In the event of any inconsistency between this summary and any Relevant Licence, the Relevant Licence(s) shall prevail.</h6>
-        </div>
-    </div>
-    <div class="ElementsContainer">
-            <div class="Element">
-                <h5>YOUR FREEDOM</h5>
-                <div class="ElementContent">All tools on this website are free software. You can use, redistribute and/or modify any content on this website, provided that you share alike, i.e. under the terms of the Relevant Licence(s).</div>
-            </div>
-            <div class="Element">
-                <h5>COPYRIGHT</h5>
-                <div class="ElementContent">The author retains copyright over all content on this website. You must make appropriate attributions to the author when you redistribute any content on this website to others, whether that content being redistributed is modified or not.</div>
-            </div>
-            <div class="Element">
-                <h5>COMMERCIAL USE</h5>
-                <div class="ElementContent">Commercial use is permitted.</div>
-            </div>
-    </div>
-</div>
-<div class="Page" id="HomePage">
-    <div class="ElementsContainer">
-        <div class="Element">
-            <h5>ABOUT</h5>
-            <div class="ElementContent">Interesting free (<i>as in freedom</i>) web-based tools that I have written to enhance my life - which will probably enhance yours as well.<br /><br />All tools are available open-source - <b>please feel free to use, download, modify and share</b> them.<br /><br />These tools are made available in the hope that they would be useful to you. But as an amateur developer, I am unable to guarantee their reliability. These tools come with <b>absolutely no warranty</b>. For details, please read the <a href="javascript:ShowPage('Legal')">legal section</a>.</div>
-        </div>
-        <div class="Element">
-            <table class="ElementHeader">
-                <tr><td><h5>TOOLKIT</h5></td><td><a href="javascript:ShowPage('Toolkit')">MORE</a></td></tr>
-            </table>
-            <table class="HomeToolkit ElementContent">
-                <tr>
-                    <td><h5>&#64;AllTimes 0.4.0</h5>Multi-threaded timer and stopwatch<br />HTML + JavaScript</td>
-                    <td style="width:105px"><a href="./AllTimes/releases/AtAllTimes-0.4.0.html" target="_blank"><img src="./assets/Toolkit-Launch.svg" /></a><a href="./AllTimes/releases/AtAllTimes-0.4.0.zip" target="_blank"><img src="./assets/Toolkit-Download.svg" /></a><a href="./AllTimes"><img src="./assets/Toolkit-Info.svg" /></a></td>
-                </tr>
-
-            </table>
-        </div>
-        <div class="Element">
-            <b>HELP</b>
-        </div>
-        <div class="Element">
-            <b>BLOG</b>
-        </div>
-        <div class="Element">
-            <h5>CONTRIBUTE</h5>
-            <div class="ElementContent">Please feel free to contribute to my projects at <a href="https://github.com/leestevetk" target="_blank">my GitHub page</a> - whether by way of bug reports, feature requests or otherwise.</div>
-        </div>
-        <div class="Element">
-            <table class="ElementHeader">
-                <tr><td><h5>LEGAL</h5></td><td><a href="javascript:ShowPage('Legal')">DETAILS</a></td></tr>
-            </table>
-            <div class="ElementContent">
-                Tools on this website are provided to you under the <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank">GNU General Public License (version 3)</a>. Other content on this website is provided to you under the <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. All content on this website is provided to you <b>without any warranty.</b> By proceeding to use this website, you consent to be bound by the terms of these licences. For details, <a href="javascript:ShowPage('Legal')">click here</a>.
-                <p style="text-align:center;padding-top:10px"><a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank"><img src="https://www.gnu.org/graphics/gplv3-with-text-136x68.png" style="height:34px" /></a><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" style="margin-left:30px" /></a></p>
-            </div>
-        </div>
-    </div>
-</div>
+<table class="Footer">
+    <tr>
+        <td>&copy; 2020 Steve's Toolkit</td>
+        <td><a href="javascript:ShowPage('Legal')">Legal Notice</a><a href="https://github.com/leestevetk">GitHub</a></td>
+    </tr>
+</table>
 </body>
 </html>
-
- 
