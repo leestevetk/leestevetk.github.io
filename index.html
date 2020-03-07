@@ -19,6 +19,7 @@
         margin: auto;
         border:20px transparent solid;
         box-sizing: border-box;
+        font-size: 15px;
     }
     p {
         line-height: 1.5;
@@ -28,7 +29,12 @@
         color: #0000d8;
     }
     h1 {
-        font-size:1.5em;
+        font-size: 1.5em;
+        line-height: 1;
+    }
+    h3 {
+        font-size: 1.2em;
+        margin: 0px;
     }
     div#WhitePage {
         padding: 20px;
@@ -135,6 +141,10 @@
         color:#444;
         text-decoration: underline;
     }
+    table.Footer td:nth-child(2) a:active {
+        color:#444;
+        text-decoration: none;
+    }
     @keyframes ShowPage {
         0% {display:none;opacity:0}
         49% {display:none;opacity:0}
@@ -160,26 +170,40 @@
 <body>
 <div id="WhitePage">
     <div id="HomePage" class="Page">
-        <div id="ShortLegal">Tools on this website are provided to you under their respective licences without any warranty, see our <a href="javascript:ShowPage('Legal')">Legal Notice.</a>
+        <div id="ShortLegal">IMPORTANT: We disclaim any liability whatsoever, please see our <a href="javascript:ShowPage('Legal')">Legal Notice</a> for details.
         </div>
         <table class="Tool" id="AllTimes">
             <tr>
-                <td><b>@AllTimes</b><br />Multi-threaded timer and stopwatch <a href="./AllTimes/index.html">(Details)</a></td>
-                <td><a href="./AllTimes/releases/AtAllTimes-0.4.0.html" class="ToolButton">Launch</a><p class="LicenceNotice">By proceeding you accept the <a href="https://github.com/leestevetk/AllTimes/blob/master/LICENSE" class="Underline">applicable license</a>.</p></td>
+                <td>
+                    <h3>@AllTimes</h3>
+                    <p>Multi-threaded timer and stopwatch</p>
+                    <p>Homepage: <a href="./AllTimes/" target="_blank">https://leesteve.tk/AllTimes/</a><br />GitHub: <a href="https://github.com/leestevetk/AllTimes" target="_blank">https://github.com/leestevetk/AllTimes</a></p>
+                </td>
+                <td>
+                    <a href="./AllTimes/releases/AtAllTimes-0.4.0.html" class="ToolButton" target="_blank">Launch</a>
+                    <a href="./AllTimes/releases/AtAllTimes-0.4.0.zip" class="ToolButton" target="_blank">Download</a>
+                    <p class="LicenceNotice">By proceeding you accept the <a href="https://github.com/leestevetk/AllTimes/blob/master/LICENSE">applicable licence</a>.</p>
+                </td>
             </tr>
         </table>
         <table class="Tool" id="WoL">
             <tr>
-                <td><b>WoL.sh</b><br />Simple Wake-On-LAN shell script for Mac/Linux <a href="./WoL.sh/index.html">(Details)</a>.</td>
-                <td><a href="https://github.com/leestevetk/WoL.sh/releases/download/v0.1/WoL.sh" class="ToolButton">Download</a><p class="LicenceNotice">By proceeding you accept the <a href="https://github.com/leestevetk/WoL.sh/blob/master/LICENSE" class="Underline">applicable license</a>.</p></td>
+                <td>
+                    <h3>WoL.sh</h3>
+                    <p>Simple Wake-On-LAN shell script for Mac/Linux</p>
+                    <p>Homepage: <a href="./WoL.sh/" target="_blank">https://leesteve.tk/WoL.sh/</a><br />GitHub: <a href="https://github.com/leestevetk/WoL.sh" target="_blank">https://github.com/leestevetk/WoL.sh</a></p>
+                <td>
+                    <a href="https://github.com/leestevetk/WoL.sh/releases/download/v0.1/WoL.sh" class="ToolButton" target="_blank">Download</a>
+                    <p class="LicenceNotice">By proceeding you accept the <a href="https://github.com/leestevetk/WoL.sh/blob/master/LICENSE">applicable licence</a>.</p>
+                </td>
             </tr>
         </table>
     </div>
     <div id="LegalPage" class="HiddenPage">
         <a href="javascript:ShowPage('Home')">Return to homepage</a>
         <h1>LEGAL NOTICE</h1>
-        <p>I, OWNER OF THIS WEBSITE, HEREBY DISCLAIM ANY LIABILITY FOR DAMAGES OR WARRANTY arising in or out of the course of your usage of this website and any content thereof, under any laws of any jurisdiction, to the extent that is legally permissible.</p>
-        <p>Your use of this website and any content thereof is governed by the laws of the Hong Kong Special Administrative Region of the People's Republic of China ("Hong Kong"). You irrevocably agree that the courts of Hong Kong shall enjoy exclusive jurisdiction over, and that the courts of Hong Kong is the most appropriate and convenient forum for resolving, any disputes or claims arising in or out of the course of your usage of this website and any content thereof.</p>
+        <p>Your use of this website and any content thereof is governed by the laws of the Hong Kong Special Administrative Region of the People's Republic of China <b>("Hong Kong")</b>. You irrevocably agree that the courts of Hong Kong shall enjoy exclusive jurisdiction over, and that the courts of Hong Kong is the most appropriate and convenient forum for resolving, any disputes or claims arising in or out of the course of your usage of this website and any content thereof.</p>
+        <p><b>WE HEREBY DISCLAIM ANY LIABILITY</b>, whether damages or otherwise, arising in or out of the course of our operation and/or your usage of this website and/or any content therein, to the extent that is legally permissible; provided that insofar the Control of Exemption Clauses Ordinance (Cap. 71 of the Laws of Hong Kong) is applicable to the construction of this document, the foregoing disclaimer shall not apply to liability for death or personal injuries resulting from negligence.</p>
     </div>
 </div>
 <table class="Footer">
